@@ -3,7 +3,7 @@ Mobile device management with Symfony
 
 This is a implementation of the Apple Mobile device management as it is detailed in [the documentation][1].
 
-I have created a [project][] to make easier to deploy the project using [dockers][3] and [fig][4].
+I have created a [project][2] to make easier to deploy the project using [dockers][3] and [fig][4].
 
 
 
