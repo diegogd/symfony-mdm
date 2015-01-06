@@ -1,0 +1,5 @@
+radmas_mdm:
+    resource: "@RadmasMDMBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
