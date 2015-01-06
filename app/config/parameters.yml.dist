@@ -18,3 +18,6 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    signcert: "%kernel.root_dir%/../certs/server.crt"
+    privkey: "%kernel.root_dir%/../certs/server.key"

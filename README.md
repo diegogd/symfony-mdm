@@ -5,6 +5,9 @@ This is a implementation of the Apple Mobile device management as it is detailed
 
 I have created a [project][2] to make easier to deploy the project using [dockers][3] and [fig][4].
 
+You can generate your own certificates or use a script to generate temporal certificates for the project.
+
+    $ ./certs/scripts/buildCertificates.sh
 
 
 
