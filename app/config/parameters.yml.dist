@@ -1,11 +1,7 @@
 # This file is a "template" of what your parameters.yml file should look like
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
+    database_host:     mongodb://localhost:27017
     database_name:     symfony
-    database_user:     root
-    database_password: ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
@@ -21,3 +17,4 @@ parameters:
 
     signcert: "%kernel.root_dir%/../certs/server.crt"
     privkey: "%kernel.root_dir%/../certs/server.key"
+    privkey_pass_file: '%kernel.root_dir%/../certs/password'

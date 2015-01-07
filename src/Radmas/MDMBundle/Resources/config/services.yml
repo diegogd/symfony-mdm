@@ -1,7 +1,7 @@
 services:
   mdm_service:
     class: Radmas\MDMBundle\Services\MDMService
-    arguments: ["%signcert%", "%privkey%"]
+    arguments: ["%signcert%", "%privkey%", "%privkey_pass_file%", "@jms_serializer"]
     calls:
       - [setRouter, ['@router']]
 

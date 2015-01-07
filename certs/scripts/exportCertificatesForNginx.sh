@@ -30,5 +30,12 @@ openssl pkcs12 \
   -in server.p12 \
   -out server.key
 
+# Export the certificate to pem for symfony usage
+openssl pkcs12 \
+  -passout env:PW \
+  -passin env:PW \
+  -in server.p12 \
+  -out server.pem
+
 # Clean up.
 rm server.p12

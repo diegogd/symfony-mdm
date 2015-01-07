@@ -5,6 +5,8 @@ namespace Radmas\MDMBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\AcceptHeader;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
@@ -38,9 +40,15 @@ class DefaultController extends Controller
     /**
      * @Route("/enroll")
      */
-    public function enrollAction()
+    public function enrollAction(Request $request)
     {
-        $this->get('mdm_service')->profileServicePayload();
-        return array();
+        $result = $this->get('mdm_service')->profileServicePayload($request, "signed-auth-token", true);
+
+        $response = new Response();
+        $response->setContent($result);
+        $response->headers->set("Content-Type", "application/x-apple-aspen-config");
+        $response->headers->set('Content-Disposition', 'attachment;filename="signed.plist"');
+
+        return $response;
     }
 }
